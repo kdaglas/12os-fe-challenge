@@ -10,7 +10,7 @@ const MoviesComponent = (props: Props) => {
             <div className="grid grid-flow-row gap-7 text-neutral-600 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
 
                 <div
-                    className="my-8 rounded shadow-lg shadow-gray-200 dark:shadow-gray-900 bg-white dark:bg-gray-800 duration-300 hover:-translate-y-1"
+                    className="my-8 rounded shadow-lg shadow-gray-200  duration-300 hover:-translate-y-1"
 
                 >
                     <a href="link" className="cursor-pointer">
@@ -21,11 +21,11 @@ const MoviesComponent = (props: Props) => {
                         />
 
                         <div className="p-4">
-                            <p className="text-base  font-medium leading-relaxed text-gray-800 dark:text-gray-300">
+                            <p className="text-base  font-medium leading-relaxed text-gray-800 ">
                                 Puss in Boots
                             </p>
 
-                            <small className="leading-5 text-gray-500 dark:text-gray-400">
+                            <small className="leading-5 text-gray-500 ">
                                 2023
                             </small>
                         </div>
@@ -33,7 +33,7 @@ const MoviesComponent = (props: Props) => {
                 </div>
 
                 <div
-                    className="my-8 rounded shadow-lg shadow-gray-200 dark:shadow-gray-900 bg-white dark:bg-gray-800 duration-300 hover:-translate-y-1"
+                    className="my-8 rounded shadow-lg shadow-gray-200  duration-300 hover:-translate-y-1"
 
                 >
                     <a href="link" className="cursor-pointer">
@@ -44,11 +44,11 @@ const MoviesComponent = (props: Props) => {
                         />
 
                         <div className="p-4">
-                            <p className="text-base  font-medium leading-relaxed text-gray-800 dark:text-gray-300">
+                            <p className="text-base  font-medium leading-relaxed text-gray-800 ">
                                 Puss in Boots
                             </p>
 
-                            <small className="leading-5 text-gray-500 dark:text-gray-400">
+                            <small className="leading-5 text-gray-500 ">
                                 2023
                             </small>
                         </div>
@@ -56,7 +56,7 @@ const MoviesComponent = (props: Props) => {
                 </div>
 
                 <div
-                    className="my-8 rounded shadow-lg shadow-gray-200 dark:shadow-gray-900 bg-white dark:bg-gray-800 duration-300 hover:-translate-y-1"
+                    className="my-8 rounded shadow-lg shadow-gray-200  duration-300 hover:-translate-y-1"
 
                 >
                     <a href="link" className="cursor-pointer">
@@ -67,11 +67,11 @@ const MoviesComponent = (props: Props) => {
                         />
 
                         <div className="p-4">
-                            <p className="text-base  font-medium leading-relaxed text-gray-800 dark:text-gray-300">
+                            <p className="text-base  font-medium leading-relaxed text-gray-800 ">
                                 Puss in Boots
                             </p>
 
-                            <small className="leading-5 text-gray-500 dark:text-gray-400">
+                            <small className="leading-5 text-gray-500 ">
                                 2023
                             </small>
                         </div>
@@ -79,7 +79,7 @@ const MoviesComponent = (props: Props) => {
                 </div>
 
                 <div
-                    className="my-8 rounded shadow-lg shadow-gray-200 dark:shadow-gray-900 bg-white dark:bg-gray-800 duration-300 hover:-translate-y-1"
+                    className="my-8 rounded shadow-lg shadow-gray-200  duration-300 hover:-translate-y-1"
 
                 >
                     <a href="link" className="cursor-pointer">
@@ -90,11 +90,11 @@ const MoviesComponent = (props: Props) => {
                         />
 
                         <div className="p-4">
-                            <p className="text-base  font-medium leading-relaxed text-gray-800 dark:text-gray-300">
+                            <p className="text-base  font-medium leading-relaxed text-gray-800 ">
                                 Puss in Boots
                             </p>
 
-                            <small className="leading-5 text-gray-500 dark:text-gray-400">
+                            <small className="leading-5 text-gray-500 ">
                                 2023
                             </small>
                         </div>
@@ -102,7 +102,7 @@ const MoviesComponent = (props: Props) => {
                 </div>
 
                 <div
-                    className="my-8 rounded shadow-lg shadow-gray-200 dark:shadow-gray-900 bg-white dark:bg-gray-800 duration-300 hover:-translate-y-1"
+                    className="my-8 rounded shadow-lg shadow-gray-200  duration-300 hover:-translate-y-1"
 
                 >
                     <a href="link" className="cursor-pointer">
@@ -113,11 +113,11 @@ const MoviesComponent = (props: Props) => {
                         />
 
                         <div className="p-4">
-                            <p className="text-base  font-medium leading-relaxed text-gray-800 dark:text-gray-300">
+                            <p className="text-base  font-medium leading-relaxed text-gray-800 ">
                                 Puss in Boots
                             </p>
 
-                            <small className="leading-5 text-gray-500 dark:text-gray-400">
+                            <small className="leading-5 text-gray-500 ">
                                 2023
                             </small>
                         </div>
@@ -125,7 +125,7 @@ const MoviesComponent = (props: Props) => {
                 </div>
 
                 <div
-                    className="my-8 rounded shadow-lg shadow-gray-200 dark:shadow-gray-900 bg-white dark:bg-gray-800 duration-300 hover:-translate-y-1"
+                    className="my-8 rounded shadow-lg shadow-gray-200  duration-300 hover:-translate-y-1"
 
                 >
                     <a href="link" className="cursor-pointer">
@@ -136,11 +136,11 @@ const MoviesComponent = (props: Props) => {
                         />
 
                         <div className="p-4">
-                            <p className="text-base  font-medium leading-relaxed text-gray-800 dark:text-gray-300">
+                            <p className="text-base  font-medium leading-relaxed text-gray-800 ">
                                 Puss in Boots
                             </p>
 
-                            <small className="leading-5 text-gray-500 dark:text-gray-400">
+                            <small className="leading-5 text-gray-500 ">
                                 2023
                             </small>
                         </div>
@@ -148,7 +148,7 @@ const MoviesComponent = (props: Props) => {
                 </div>
 
                 <div
-                    className="my-8 rounded shadow-lg shadow-gray-200 dark:shadow-gray-900 bg-white dark:bg-gray-800 duration-300 hover:-translate-y-1"
+                    className="my-8 rounded shadow-lg shadow-gray-200  duration-300 hover:-translate-y-1"
 
                 >
                     <a href="link" className="cursor-pointer">
@@ -159,11 +159,11 @@ const MoviesComponent = (props: Props) => {
                         />
 
                         <div className="p-4">
-                            <p className="text-base  font-medium leading-relaxed text-gray-800 dark:text-gray-300">
+                            <p className="text-base  font-medium leading-relaxed text-gray-800 ">
                                 Puss in Boots
                             </p>
 
-                            <small className="leading-5 text-gray-500 dark:text-gray-400">
+                            <small className="leading-5 text-gray-500 ">
                                 2023
                             </small>
                         </div>
@@ -171,7 +171,7 @@ const MoviesComponent = (props: Props) => {
                 </div>
 
                 <div
-                    className="my-8 rounded shadow-lg shadow-gray-200 dark:shadow-gray-900 bg-white dark:bg-gray-800 duration-300 hover:-translate-y-1"
+                    className="my-8 rounded shadow-lg shadow-gray-200  duration-300 hover:-translate-y-1"
 
                 >
                     <a href="link" className="cursor-pointer">
@@ -182,11 +182,11 @@ const MoviesComponent = (props: Props) => {
                         />
 
                         <div className="p-4">
-                            <p className="text-base  font-medium leading-relaxed text-gray-800 dark:text-gray-300">
+                            <p className="text-base  font-medium leading-relaxed text-gray-800 ">
                                 Puss in Boots
                             </p>
 
-                            <small className="leading-5 text-gray-500 dark:text-gray-400">
+                            <small className="leading-5 text-gray-500 ">
                                 2023
                             </small>
                         </div>
@@ -194,7 +194,7 @@ const MoviesComponent = (props: Props) => {
                 </div>
 
                 <div
-                    className="my-8 rounded shadow-lg shadow-gray-200 dark:shadow-gray-900 bg-white dark:bg-gray-800 duration-300 hover:-translate-y-1"
+                    className="my-8 rounded shadow-lg shadow-gray-200  duration-300 hover:-translate-y-1"
 
                 >
                     <a href="link" className="cursor-pointer">
@@ -205,11 +205,11 @@ const MoviesComponent = (props: Props) => {
                         />
 
                         <div className="p-4">
-                            <p className="text-base  font-medium leading-relaxed text-gray-800 dark:text-gray-300">
+                            <p className="text-base  font-medium leading-relaxed text-gray-800 ">
                                 Puss in Boots
                             </p>
 
-                            <small className="leading-5 text-gray-500 dark:text-gray-400">
+                            <small className="leading-5 text-gray-500 ">
                                 2023
                             </small>
                         </div>
@@ -217,7 +217,7 @@ const MoviesComponent = (props: Props) => {
                 </div>
 
                 <div
-                    className="my-8 rounded shadow-lg shadow-gray-200 dark:shadow-gray-900 bg-white dark:bg-gray-800 duration-300 hover:-translate-y-1"
+                    className="my-8 rounded shadow-lg shadow-gray-200  duration-300 hover:-translate-y-1"
 
                 >
                     <a href="link" className="cursor-pointer">
@@ -228,11 +228,11 @@ const MoviesComponent = (props: Props) => {
                         />
 
                         <div className="p-4">
-                            <p className="text-base  font-medium leading-relaxed text-gray-800 dark:text-gray-300">
+                            <p className="text-base  font-medium leading-relaxed text-gray-800 ">
                                 Puss in Boots
                             </p>
 
-                            <small className="leading-5 text-gray-500 dark:text-gray-400">
+                            <small className="leading-5 text-gray-500 ">
                                 2023
                             </small>
                         </div>
