@@ -2,6 +2,8 @@
 
 A simple single-page web application that allows users to search for movies and view movie details. The application uses the OMDb API (http://www.omdbapi.com/) to fetch movie data.
 
+(movieapp)[https://12os-fe-challenge.netlify.app/]
+
 ## Functionality
 
 1. Use ReactJS to build the application, and use React Hooks to manage state.
