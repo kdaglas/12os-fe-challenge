@@ -12,21 +12,28 @@ export interface Props {
 
 const MoviesComponent = (props: Props) => {
     return (
-        <section className="mx-auto w-11/12">
-            <div className="grid grid-flow-row gap-7 text-neutral-600 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+        <section className="mx-auto w-10/12">
+
+            <div className='mt-10 -mb-3'>
+                <h4 className="text-xl font-light">
+                    Your Searched items...
+                </h4>
+            </div>
+
+            <div className="grid grid-flow-row gap-x-5 text-neutral-600 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
 
                 <div
-                    className="my-8 rounded shadow-lg shadow-gray-200  duration-300 hover:-translate-y-1"
+                    className="my-4    duration-300 hover:-translate-y-1"
 
                 >
                     <a href="link" className="cursor-pointer">
                         <img
                             alt=""
-                            src={poster}
-                            className="rounded-t h-72 w-full object-cover"
+                            src={"https://m.media-amazon.com/images/M/MV5BNzEyMjdlYTItNzBkNi00M2U5LThiOWEtMzgyYWQ0MmY0ZDE4XkEyXkFqcGdeQXVyNTM3MDMyMDQ@._V1_SX300.jpg"}
+                            className=" h-64 w-full object-cover"
                         />
 
-                        <div className="p-4">
+                        <div className="py-2">
                             <p className="text-base  font-medium leading-relaxed text-gray-800 ">
                                 Puss in Boots
                             </p>
@@ -39,17 +46,17 @@ const MoviesComponent = (props: Props) => {
                 </div>
 
                 <div
-                    className="my-8 rounded shadow-lg shadow-gray-200  duration-300 hover:-translate-y-1"
+                    className="my-4    duration-300 hover:-translate-y-1"
 
                 >
                     <a href="link" className="cursor-pointer">
                         <img
                             alt=""
                             src={poster1}
-                            className="rounded-t h-72 w-full object-cover"
+                            className=" h-64 w-full object-cover"
                         />
 
-                        <div className="p-4">
+                        <div className="py-2">
                             <p className="text-base  font-medium leading-relaxed text-gray-800 ">
                                 Puss in Boots
                             </p>
@@ -62,17 +69,17 @@ const MoviesComponent = (props: Props) => {
                 </div>
 
                 <div
-                    className="my-8 rounded shadow-lg shadow-gray-200  duration-300 hover:-translate-y-1"
+                    className="my-4    duration-300 hover:-translate-y-1"
 
                 >
                     <a href="link" className="cursor-pointer">
                         <img
                             alt=""
                             src={poster2}
-                            className="rounded-t h-72 w-full object-cover"
+                            className=" h-64 w-full object-cover"
                         />
 
-                        <div className="p-4">
+                        <div className="py-2">
                             <p className="text-base  font-medium leading-relaxed text-gray-800 ">
                                 Puss in Boots
                             </p>
@@ -85,17 +92,17 @@ const MoviesComponent = (props: Props) => {
                 </div>
 
                 <div
-                    className="my-8 rounded shadow-lg shadow-gray-200  duration-300 hover:-translate-y-1"
+                    className="my-4    duration-300 hover:-translate-y-1"
 
                 >
                     <a href="link" className="cursor-pointer">
                         <img
                             alt=""
                             src={poster3}
-                            className="rounded-t h-72 w-full object-cover"
+                            className=" h-64 w-full object-cover"
                         />
 
-                        <div className="p-4">
+                        <div className="py-2">
                             <p className="text-base  font-medium leading-relaxed text-gray-800 ">
                                 Puss in Boots
                             </p>
@@ -108,17 +115,17 @@ const MoviesComponent = (props: Props) => {
                 </div>
 
                 <div
-                    className="my-8 rounded shadow-lg shadow-gray-200  duration-300 hover:-translate-y-1"
+                    className="my-4    duration-300 hover:-translate-y-1"
 
                 >
                     <a href="link" className="cursor-pointer">
                         <img
                             alt=""
                             src={poster4}
-                            className="rounded-t h-72 w-full object-cover"
+                            className=" h-64 w-full object-cover"
                         />
 
-                        <div className="p-4">
+                        <div className="py-2">
                             <p className="text-base  font-medium leading-relaxed text-gray-800 ">
                                 Puss in Boots
                             </p>
@@ -131,17 +138,17 @@ const MoviesComponent = (props: Props) => {
                 </div>
 
                 <div
-                    className="my-8 rounded shadow-lg shadow-gray-200  duration-300 hover:-translate-y-1"
+                    className="my-4    duration-300 hover:-translate-y-1"
 
                 >
                     <a href="link" className="cursor-pointer">
                         <img
                             alt=""
                             src={poster5}
-                            className="rounded-t h-72 w-full object-cover"
+                            className=" h-64 w-full object-cover"
                         />
 
-                        <div className="p-4">
+                        <div className="py-2">
                             <p className="text-base  font-medium leading-relaxed text-gray-800 ">
                                 Puss in Boots
                             </p>
@@ -154,17 +161,17 @@ const MoviesComponent = (props: Props) => {
                 </div>
 
                 <div
-                    className="my-8 rounded shadow-lg shadow-gray-200  duration-300 hover:-translate-y-1"
+                    className="my-4    duration-300 hover:-translate-y-1"
 
                 >
                     <a href="link" className="cursor-pointer">
                         <img
                             alt=""
                             src={poster6}
-                            className="rounded-t h-72 w-full object-cover"
+                            className=" h-64 w-full object-cover"
                         />
 
-                        <div className="p-4">
+                        <div className="py-2">
                             <p className="text-base  font-medium leading-relaxed text-gray-800 ">
                                 Puss in Boots
                             </p>
@@ -177,17 +184,17 @@ const MoviesComponent = (props: Props) => {
                 </div>
 
                 <div
-                    className="my-8 rounded shadow-lg shadow-gray-200  duration-300 hover:-translate-y-1"
+                    className="my-4    duration-300 hover:-translate-y-1"
 
                 >
                     <a href="link" className="cursor-pointer">
                         <img
                             alt=""
                             src={poster}
-                            className="rounded-t h-72 w-full object-cover"
+                            className=" h-64 w-full object-cover"
                         />
 
-                        <div className="p-4">
+                        <div className="py-2">
                             <p className="text-base  font-medium leading-relaxed text-gray-800 ">
                                 Puss in Boots
                             </p>
@@ -200,17 +207,17 @@ const MoviesComponent = (props: Props) => {
                 </div>
 
                 <div
-                    className="my-8 rounded shadow-lg shadow-gray-200  duration-300 hover:-translate-y-1"
+                    className="my-4    duration-300 hover:-translate-y-1"
 
                 >
                     <a href="link" className="cursor-pointer">
                         <img
                             alt=""
                             src={poster}
-                            className="rounded-t h-72 w-full object-cover"
+                            className=" h-64 w-full object-cover"
                         />
 
-                        <div className="p-4">
+                        <div className="py-2">
                             <p className="text-base  font-medium leading-relaxed text-gray-800 ">
                                 Puss in Boots
                             </p>
@@ -223,17 +230,17 @@ const MoviesComponent = (props: Props) => {
                 </div>
 
                 <div
-                    className="my-8 rounded shadow-lg shadow-gray-200  duration-300 hover:-translate-y-1"
+                    className="my-4    duration-300 hover:-translate-y-1"
 
                 >
                     <a href="link" className="cursor-pointer">
                         <img
                             alt=""
                             src={poster}
-                            className="rounded-t h-72 w-full object-cover"
+                            className=" h-64 w-full object-cover"
                         />
 
-                        <div className="p-4">
+                        <div className="py-2">
                             <p className="text-base  font-medium leading-relaxed text-gray-800 ">
                                 Puss in Boots
                             </p>

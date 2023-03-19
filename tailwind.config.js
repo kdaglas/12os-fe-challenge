@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'hero': 'url(../src/assets/images/bg3.jpg)'
+        'hero': 'linear-gradient(to right, #00000036, #0000007a), url(../src/assets/images/bg3.jpg)'
       }
     },
     colors: {
