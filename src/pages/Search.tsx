@@ -1,7 +1,7 @@
 import React from 'react';
 import MoviesComponent from '../components/MoviesComponent';
 import SearchComponent from '../components/SearchComponent';
-import Header from '../shared/Header';
+import Header from '../components/shared/Header';
 
 export interface Props {
 }

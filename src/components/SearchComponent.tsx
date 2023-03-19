@@ -6,7 +6,7 @@ type Props = {}
 const SearchComponent = (props: Props) => {
 
     return (
-        <div className="w-full h-72 flex justify-center items-center" style={{  backgroundImage: `linear-gradient(to right, #00000036, #0000007a), url(${bg})`, backgroundRepeat: 'no-repeat', backgroundSize: "cover" }}>
+        <div className="w-full h-60 flex justify-center items-center" style={{  backgroundImage: `linear-gradient(to right, #00000036, #0000007a), url(${bg})`, backgroundRepeat: 'no-repeat', backgroundSize: "cover" }}>
             <div className="w-1/2 mx-auto">
 
                 <h1 className="flex items-center justify-center text-center text-4xl text-white mb-10 font-normal">

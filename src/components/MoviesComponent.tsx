@@ -1,5 +1,11 @@
 import React from 'react';
 import poster from '../assets/images/john.jpg';
+import poster1 from '../assets/images/1.jpg';
+import poster2 from '../assets/images/2.jpg';
+import poster3 from '../assets/images/3.jpg';
+import poster4 from '../assets/images/4.jpg';
+import poster5 from '../assets/images/5.jpg';
+import poster6 from '../assets/images/6.jpg';
 
 export interface Props {
 }
@@ -39,7 +45,7 @@ const MoviesComponent = (props: Props) => {
                     <a href="link" className="cursor-pointer">
                         <img
                             alt=""
-                            src={poster}
+                            src={poster1}
                             className="rounded-t h-72 w-full object-cover"
                         />
 
@@ -62,7 +68,7 @@ const MoviesComponent = (props: Props) => {
                     <a href="link" className="cursor-pointer">
                         <img
                             alt=""
-                            src={poster}
+                            src={poster2}
                             className="rounded-t h-72 w-full object-cover"
                         />
 
@@ -85,7 +91,7 @@ const MoviesComponent = (props: Props) => {
                     <a href="link" className="cursor-pointer">
                         <img
                             alt=""
-                            src={poster}
+                            src={poster3}
                             className="rounded-t h-72 w-full object-cover"
                         />
 
@@ -108,7 +114,7 @@ const MoviesComponent = (props: Props) => {
                     <a href="link" className="cursor-pointer">
                         <img
                             alt=""
-                            src={poster}
+                            src={poster4}
                             className="rounded-t h-72 w-full object-cover"
                         />
 
@@ -131,7 +137,7 @@ const MoviesComponent = (props: Props) => {
                     <a href="link" className="cursor-pointer">
                         <img
                             alt=""
-                            src={poster}
+                            src={poster5}
                             className="rounded-t h-72 w-full object-cover"
                         />
 
@@ -154,7 +160,7 @@ const MoviesComponent = (props: Props) => {
                     <a href="link" className="cursor-pointer">
                         <img
                             alt=""
-                            src={poster}
+                            src={poster6}
                             className="rounded-t h-72 w-full object-cover"
                         />
 

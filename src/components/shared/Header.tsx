@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../assets/images/mov.jpg';
+import logo from '../../assets/images/mov.jpg';
 
 export interface IAppProps {
 }
