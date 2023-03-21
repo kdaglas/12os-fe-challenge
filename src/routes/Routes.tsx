@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Search from "../pages/Search";
+import MovieDetailPage from "../pages/MovieDetailPage";
+import Search from "../pages/SearchPage";
 
 const Routing: FC = () => {
 
@@ -9,6 +10,7 @@ const Routing: FC = () => {
         <Router>
             <Routes>
                 <Route path="/" element={ <Search/> } />
+                <Route path="/movie-detail" element={ <MovieDetailPage/> } />
             </Routes>
         </Router>
 
