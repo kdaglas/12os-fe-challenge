@@ -20,12 +20,12 @@ module.exports = {
       primary: "#eb2429",
       gray: colors.gray,
       white: colors.white,
-      red: colors.red,
+      dark: "#181a1b",
     },
-    fontFamily: {
-      sans: ['Graphik', 'sans-serif'],
-      serif: ['Merriweather', 'serif'],
-    },
+    // fontFamily: {
+    //   sans: ['Graphik', 'sans-serif'],
+    //   serif: ['Merriweather', 'serif'],
+    // },
   },
   plugins: [],
 }

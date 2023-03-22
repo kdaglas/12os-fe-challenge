@@ -59,6 +59,7 @@ const MoviesComponent: React.FC = (props) => {
                         Year={movie.Year}
                         Poster={movie.Poster}
                         Type={movie.Type}
+                        imdbID={movie.imdbID}
                     />
                 ))}
 

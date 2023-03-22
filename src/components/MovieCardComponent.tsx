@@ -7,7 +7,13 @@ const MovieCard: React.FC<Movie> = (Movie) => {
 
     return (
         <div className="my-4 duration-300 hover:-translate-y-1">
-            <Link to="/movie-detail" className="cursor-pointer">
+
+            <Link
+                className="cursor-pointer"
+                to={{
+                    pathname: `/movie/${Movie.imdbID}`,
+                }}
+            >
                 <img
                     alt=""
                     src={Movie.Poster}
@@ -30,6 +36,7 @@ const MovieCard: React.FC<Movie> = (Movie) => {
                     </div>
                 </div>
             </Link>
+
         </div>
     );
 };
