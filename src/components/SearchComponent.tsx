@@ -42,6 +42,10 @@ const SearchComponent = (props: Props) => {
                     </button>
                 </form>
 
+                {props.title && props.title.length < 3 && 
+                    <span className='text-primary font-medium flex justify-center'>Please type three or more characters</span>
+                }
+
             </div>
         </div>
     )

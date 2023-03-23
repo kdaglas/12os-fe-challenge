@@ -28,7 +28,7 @@ const Paginate: React.FC<Props> = (props) => {
 
                 <li className={`page-item`}>
                     <span
-                        className={`text-primary hover:text-rose-700 duration-300 hover:border-rose-700 flex border border-primary rounded-md my-auto mx-1.5 text-sm inline-block px-2 py-1 cursor-pointer ${props.page == props.totalPages && " opacity-30"}`}
+                        className={`text-primary hover:text-rose-700 duration-300 hover:border-rose-700 flex border border-primary rounded-md my-auto mx-1.5 text-sm inline-block px-2 py-1 cursor-pointer ${props.page === props.totalPages && " opacity-30"}`}
                         // href="#"
                         onClick={props.onClickNext}
                     >

@@ -14,21 +14,15 @@ const MoviesComponent: React.FC<Props> = (props) => {
     const [movieObject, setMovieObject] = useState<MovieList>();
 
     const [page, setPage] = useState<number>(1);
-    const [totalPages, setTotalPages] = useState<number>(1)
+    const [totalPages, setTotalPages] = useState(1)
     const [loading, setLoading] = useState<boolean>(false);
-    const [title, setTitle] = useState<string>("man");
-    const [year, setYear] = useState<string>("2022");
-    const [movieType, setMovieType] = useState<string>("movie");
+    const [title] = useState<string>("man");
+    const [year] = useState<string>("2022");
+    const [movieType] = useState<string>("movie");
 
 
     useEffect(() => {
-        // setMovieObject(undefined);
-        // if (props.title.length > 2) {
-
-        console.log(props.title)
-        setTitle(props.title)
         fetchMovies()
-        // }
     }, [props.title])
 
     useEffect(() => {
@@ -36,18 +30,15 @@ const MoviesComponent: React.FC<Props> = (props) => {
     }, [page]);
 
 
-    const fetchMovies = () => {
-
-        console.log(props.title.length)
+    const fetchMovies = async () => {
         try {
             setLoading(true);
-            axios.get<MovieList>(`https://www.omdbapi.com/?s=${props.title ? props.title : title}&y=${year}&type=${movieType}&page=${page}&apikey=1a4e0ee6`)
+            await axios.get<MovieList>(`https://www.omdbapi.com/?s=${props.title ? props.title : title}&y=${year}&type=${movieType}&page=${page}&apikey=1a4e0ee6`)
                 .then(response => {
-                    console.log(response)
                     setLoading(false);
                     if (response.data.Response === "True") {
                         setMovieObject(response.data);
-                        setTotalPages(Math.ceil((response?.data?.totalResults) / 10))
+                        setTotalPages(Math.ceil((Number(response?.data?.totalResults)) / 10))
                     } else {
                         setMovieObject(undefined);
                         setTotalPages(1)
@@ -62,14 +53,12 @@ const MoviesComponent: React.FC<Props> = (props) => {
         if (page < totalPages) {
             setPage(page + 1)
         }
-
     }
 
     const onClickPrevious = () => {
         if (page > 1) {
             setPage(page - 1)
         }
-
     }
 
 
@@ -96,13 +85,13 @@ const MoviesComponent: React.FC<Props> = (props) => {
                         onClickNext={onClickNext}
                     />
                 }
-
             </div>
 
             <div className="grid grid-flow-row gap-x-5 text-neutral-600 grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
 
-                {movieObject?.Search.map(movie => (
+                {movieObject && movieObject?.Search.map(movie => (
                     <MovieCard
+                        key={movie.imdbID}
                         Title={movie.Title.substring(0, 20)}
                         Year={movie.Year}
                         Poster={movie.Poster}
@@ -120,7 +109,14 @@ const MoviesComponent: React.FC<Props> = (props) => {
                     </h4>
                 }
 
-                {movieObject && <Paginate page={page} totalPages={totalPages} onClickPrevious={onClickPrevious} onClickNext={onClickNext} />}
+                {movieObject && 
+                    <Paginate 
+                        page={page} 
+                        totalPages={totalPages} 
+                        onClickPrevious={onClickPrevious} 
+                        onClickNext={onClickNext} 
+                    />
+                }
             </div>
 
             {!movieObject && !loading && <NoContent />}
