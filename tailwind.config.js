@@ -1,14 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 
 const colors = require('tailwindcss/colors')
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: 'class',
   theme: {
+    screens: {
+      'xs': '475px',
+      ...defaultTheme.screens,
+    },
     extend: {
       spacing: {
         '9.5/12': '77.5%',
+        '10.5/12': '87%',
         '18': '4.3rem'
       },
       backgroundImage: {

@@ -6,10 +6,10 @@ const SearchComponent = (props: Props) => {
 
     return (
         <div className="w-full h-60 mt-18 flex justify-center items-center bg-hero bg-no-repeat bg-cover">
-            <div className="w-1/2 mx-auto ">
+            <div className="w-11/12 mx-auto sm:w-11/12 md:w-9.5/12 lg:w-1/2 xl:w-1/2">
 
                 <h1 className="flex items-center justify-center text-center text-4xl text-white mb-10 font-medium">
-                    Search movies, series and more...
+                    Search movies, series & more...
                 </h1>
 
                 <form className="flex items-center">

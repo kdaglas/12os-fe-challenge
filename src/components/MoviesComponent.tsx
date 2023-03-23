@@ -19,7 +19,7 @@ const MoviesComponent: React.FC = (props) => {
 
     return (
 
-        <section className="mx-auto w-9.5/12 mb-5">
+        <section className="mx-auto w-10.5/12 sm:w-10.5/12 md:w-9.5/12 lg:w-9.5/12 xl:w-9.5/12  mb-5">
 
             <div className='mt-10 mb-1 flex justify-between'>
                 <h4 className="text-lg font-normal">
@@ -51,7 +51,7 @@ const MoviesComponent: React.FC = (props) => {
                 </ul>
             </div>
 
-            <div className="grid grid-flow-row gap-x-5 text-neutral-600 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+            <div className="grid grid-flow-row gap-x-5 text-neutral-600 grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
 
                 {movieObject?.Search.map(movie => (
                     <MovieCard
