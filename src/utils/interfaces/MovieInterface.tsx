@@ -16,7 +16,7 @@ export interface Movie {
     Metascore?: string,
     imdbRating?: string,
     imdbVotes?: string,
-    imdbID?: string,
+    imdbID: string,
     Type: string,
     DVD?: string,
     BoxOffice?: string,

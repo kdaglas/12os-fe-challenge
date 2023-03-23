@@ -10,7 +10,7 @@ const Routing: FC = () => {
         <Router>
             <Routes>
                 <Route path="/" element={ <Search/> } />
-                <Route path="/movie-detail" element={ <MovieDetailPage/> } />
+                <Route path="/movie/:movieID" element={ <MovieDetailPage/> } />
             </Routes>
         </Router>
 

@@ -42,7 +42,7 @@ const Header = (props: IAppProps) => {
 
     return (
         <div className="fixed top-0 z-10 flex justify-center items-center w-full h-18 drop-shadow-md bg-white">
-            <div className="w-9.5/12 flex justify-between items-center mx-auto">
+            <div className="w-10.5/12 sm:w-10.5/12 md:w-9.5/12 lg:w-9.5/12 xl:w-9.5/12 flex justify-between items-center mx-auto">
                 <Link to="/"><img alt="" src={logo} width="170px" /></Link>
 
                 <ul className="flex justify-between items-center w-24 font-medium">
