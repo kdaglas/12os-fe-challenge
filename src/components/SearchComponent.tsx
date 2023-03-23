@@ -1,6 +1,9 @@
 import React from 'react';
 
-type Props = {}
+interface Props {
+    title: string,
+    onChangeTitle: (e: React.ChangeEvent<HTMLInputElement>) => void
+}
 
 const SearchComponent = (props: Props) => {
 
@@ -21,6 +24,8 @@ const SearchComponent = (props: Props) => {
                         <input
                             type="text"
                             id="voice-search"
+                            onChange={props.onChangeTitle}
+                            value={props.title}
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-base focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 h-14 rounded-full"
                             placeholder="Search for a movie, a serie or an animation..."
                             required
@@ -36,6 +41,10 @@ const SearchComponent = (props: Props) => {
                         </svg>
                     </button>
                 </form>
+
+                {props.title && props.title.length < 3 && 
+                    <span className='text-primary font-medium flex justify-center'>Please type three or more characters</span>
+                }
 
             </div>
         </div>

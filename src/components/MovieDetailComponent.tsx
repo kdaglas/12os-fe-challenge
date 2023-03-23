@@ -4,35 +4,19 @@ import axios from 'axios';
 
 import { Movie } from '../utils/interfaces/MovieInterface';
 
-export interface Props {
-    // history: RouteComponentProps["history"];
-    // location: RouteComponentProps['location'];
 
-}
-
-// interface stateType{
-//     from:{pathname:string}
-// }
-
+export interface Props {}
 
 
 const MovieDetailComponent = (props: Props) => {
 
-
-    // let navigate = useNavigate();
-
-    // const { state } = useLocation<stateType>()
     const [selectedMovieID, setselectedMovieID] = useState<string>();
     const [movieDetails, setMovieDetails] = useState<Movie>();
     const { movieID } = useParams();
 
-
-
-
     useEffect(() => {
         setselectedMovieID(movieID)
     }, [movieID]);
-
 
     useEffect(() => {
         axios.get<Movie>(`https://www.omdbapi.com/?i=${selectedMovieID}&apikey=1a4e0ee6`)
@@ -40,10 +24,6 @@ const MovieDetailComponent = (props: Props) => {
                 setMovieDetails(response.data);
             });
     }, [selectedMovieID]);
-
-    // console.log(movieDetails)
-    console.log(movieID);
-
 
     return (
         <div>
