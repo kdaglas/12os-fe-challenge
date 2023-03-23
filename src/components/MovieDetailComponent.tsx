@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import { useNavigate } from "react-router-dom";
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
-import poster from '../assets/images/2.jpg'
 import { Movie } from '../utils/interfaces/MovieInterface';
 
 export interface Props {
