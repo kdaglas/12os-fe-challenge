@@ -27,11 +27,11 @@ const MovieDetailComponent = (props: Props) => {
 
     return (
         <div>
-            <div className="w-9.5/12 mt-24 mx-auto flex  items-center">
-                <div className='lg:w-1/2'>
+            <div className="w-9.5/12 mt-24 mx-auto flex items-center sm:inline-block md:block lg:flex xl:flex">
+                <div className='w-9.5/12 sm:w-9.5/12 md:w-9/12 lg:w-1/2 xl:w-1/2'>
                     <img
                         alt="movie-poster"
-                        className="w-8/12 mx-auto  object-cover object-center border border-gray-200 h-full rounded-lg"
+                        className="w-9/12 mx-auto  object-cover object-center border border-gray-200 h-full rounded-lg"
                         src={movieDetails?.Poster}
                     />
                 </div>
@@ -40,7 +40,7 @@ const MovieDetailComponent = (props: Props) => {
                     <small className="text-sm title-font border border-gray-500 px-2 py-1 tracking-widest rounded text-gray-500">
                         {movieDetails?.Type}
                     </small>
-                    <h1 className="text-gray-900 text-3xl title-font font-medium mb-1 mt-3 dark:text-white">{movieDetails?.Title}</h1>
+                    <h1 className="text-gray-900 text-3xl title-font font-medium mb-1 mt-3">{movieDetails?.Title}</h1>
 
                     <div className="flex mb-5">
                         <span className="flex items-center">
