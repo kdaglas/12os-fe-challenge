@@ -18,7 +18,6 @@ module.exports = {
         '18': '4.3rem'
       },
       backgroundImage: {
-        // 'hero': 'linear-gradient(to right, #00000036, #0000007a), url(../src/assets/images/bg3.jpg)',
         'hero': 'url(../src/assets/images/bg3.jpg)'
       }
     },
@@ -28,10 +27,6 @@ module.exports = {
       white: colors.white,
       dark: "#181a1b",
     },
-    // fontFamily: {
-    //   sans: ['Graphik', 'sans-serif'],
-    //   serif: ['Merriweather', 'serif'],
-    // },
   },
   plugins: [],
 }
