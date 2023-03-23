@@ -5,6 +5,9 @@ import { MovieList } from '../utils/interfaces/MovieInterface';
 import Paginate from './shared/PaginateBtns';
 import NoContent from './shared/NoContent';
 
+import poster from '../assets/images/placeholder.png';
+import SkeletonLoader from './shared/MoviesLoader';
+
 export interface Props {
     title?: string | any
 }
@@ -14,26 +17,26 @@ const MoviesComponent: React.FC<Props> = (props) => {
     const [movieObject, setMovieObject] = useState<MovieList>();
 
     const [page, setPage] = useState<number>(1);
-    const [totalPages, setTotalPages] = useState(1)
+    const [totalPages, setTotalPages] = useState<number>(1)
     const [loading, setLoading] = useState<boolean>(false);
     const [title] = useState<string>("man");
-    const [year] = useState<string>("2022");
-    const [movieType] = useState<string>("movie");
 
 
     useEffect(() => {
-        fetchMovies()
+        setPage(1)
+        fetchLatestMovies()
     }, [props.title])
 
     useEffect(() => {
-        fetchMovies()
+        fetchLatestMovies()
     }, [page]);
 
 
-    const fetchMovies = async () => {
+    const fetchLatestMovies = async () => {
         try {
             setLoading(true);
-            await axios.get<MovieList>(`https://www.omdbapi.com/?s=${props.title ? props.title : title}&y=${year}&type=${movieType}&page=${page}&apikey=1a4e0ee6`)
+            setTotalPages(1);
+            await axios.get<MovieList>(`https://www.omdbapi.com/?s=${props.title ? props.title : title}&page=${page}&apikey=1a4e0ee6`)
                 .then(response => {
                     setLoading(false);
                     if (response.data.Response === "True") {
@@ -51,12 +54,14 @@ const MoviesComponent: React.FC<Props> = (props) => {
 
     const onClickNext = () => {
         if (page < totalPages) {
+            setLoading(true)
             setPage(page + 1)
         }
     }
 
     const onClickPrevious = () => {
         if (page > 1) {
+            setLoading(true)
             setPage(page - 1)
         }
     }
@@ -64,63 +69,60 @@ const MoviesComponent: React.FC<Props> = (props) => {
 
     return (
 
-        <section className="mx-auto w-10.5/12 sm:w-10.5/12 md:w-9.5/12 lg:w-9.5/12 xl:w-9.5/12  mb-5">
+        <section className="mx-auto py-10 w-10.5/12 sm:w-10.5/12 md:w-9.5/12 lg:w-9.5/12 xl:w-9.5/12">
 
-            <div className='mt-10 mb-1 flex justify-between'>
-                {!loading && movieObject &&
-                    <h4 className="text-lg font-normal">
-                        Page: <span className='text-primary'>{page} of {totalPages}</span>
-                    </h4>
-                }
+            {!loading && movieObject &&
+                <>
+                    <div className='mb-1 flex justify-between'>
+                        <h4 className="text-base text-black dark:text-white font-normal">
+                            Page: <span className='text-primary'>{page} of {totalPages}</span>
+                        </h4>
 
-                {loading &&
-                    <span className='text-primary'>Loading ...</span>
-                }
+                        <Paginate
+                            page={page}
+                            totalPages={totalPages}
+                            onClickPrevious={onClickPrevious}
+                            onClickNext={onClickNext}
+                        />
+                    </div>
 
-                {movieObject &&
-                    <Paginate
-                        page={page}
-                        totalPages={totalPages}
-                        onClickPrevious={onClickPrevious}
-                        onClickNext={onClickNext}
-                    />
-                }
-            </div>
+                    <div className="grid grid-flow-row gap-x-5 text-neutral-600 grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
 
-            <div className="grid grid-flow-row gap-x-5 text-neutral-600 grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+                        {movieObject && movieObject?.Search.map(movie => (
+                            <MovieCard
+                                key={movie.imdbID}
+                                Title={movie.Title.substring(0, 20)}
+                                Year={movie.Year}
+                                Poster={movie.Poster === "N/A" ? poster : movie.Poster}
+                                Type={movie.Type}
+                                imdbID={movie.imdbID}
+                            />
+                        ))}
 
-                {movieObject && movieObject?.Search.map(movie => (
-                    <MovieCard
-                        key={movie.imdbID}
-                        Title={movie.Title.substring(0, 20)}
-                        Year={movie.Year}
-                        Poster={movie.Poster}
-                        Type={movie.Type}
-                        imdbID={movie.imdbID}
-                    />
-                ))}
+                    </div>
 
-            </div>
+                    <div className='mt-5 flex justify-between'>
+                        <h4 className="text-base text-black dark:text-white font-normal">
+                            Results: <span className='text-primary'>{movieObject?.totalResults}</span>
+                        </h4>
 
-            <div className='mt-5 mb-1 flex justify-between'>
-                {!loading && movieObject &&
-                    <h4 className="text-lg font-normal">
-                        Results: <span className='text-primary'>{movieObject?.totalResults}</span>
-                    </h4>
-                }
+                        <Paginate
+                            page={page}
+                            totalPages={totalPages}
+                            onClickPrevious={onClickPrevious}
+                            onClickNext={onClickNext}
+                        />
+                    </div>
+                </>
+            }
 
-                {movieObject && 
-                    <Paginate 
-                        page={page} 
-                        totalPages={totalPages} 
-                        onClickPrevious={onClickPrevious} 
-                        onClickNext={onClickNext} 
-                    />
-                }
-            </div>
+            {!loading && !movieObject &&
+                <NoContent />
+            }
 
-            {!movieObject && !loading && <NoContent />}
-
+            {loading &&
+                <SkeletonLoader />
+            }
 
         </section>
     );

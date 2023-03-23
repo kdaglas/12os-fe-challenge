@@ -15,7 +15,8 @@ module.exports = {
       spacing: {
         '9.5/12': '77.5%',
         '10.5/12': '87%',
-        '18': '4.3rem'
+        '18': '4.3rem',
+        '97': '600px'
       },
       backgroundImage: {
         'hero': 'url(../src/assets/images/bg3.jpg)'

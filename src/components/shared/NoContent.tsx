@@ -10,11 +10,11 @@ const NoContent: React.FC = () => {
                 <img
                     src={nocontent}
                     alt="logo"
-                    width="250px"
-                    className="img-fluid mx-auto d-block my-4"
+                    width="220px"
+                    className="img-fluid mx-auto d-block my-10"
                 />
 
-                <h3 className="text-3xl font-medium  mb-3">Oops! Kuky films says:</h3>
+                <h3 className="text-3xl font-medium  mb-5">Oops! Kuky films says:</h3>
                 <p className="text-gray-500">There seems not be any available<br /> data here, sorry.</p>
             </div>
         </div>
