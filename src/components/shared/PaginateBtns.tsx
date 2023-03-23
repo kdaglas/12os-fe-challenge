@@ -21,7 +21,7 @@ const Paginate: React.FC<Props> = (props) => {
                         // aria-disabled={currentPage === 1 ? false : true}
                         onClick={props.onClickPrevious}
                     >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="ionicon w-5 mr-1" viewBox="0 0 512 512"><title>Chevron Back</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M328 112L184 256l144 144" /></svg> Previous
+                        <svg xmlns="http://www.w3.org/2000/svg" className="ionicon w-5 mr-1" viewBox="0 0 512 512"><title>Chevron Back</title><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="48" d="M328 112L184 256l144 144" /></svg> <span className='hidden sm:hidden md:hidden lg:block xl:block'>Previous</span>
 
                     </button>
                 </li>
@@ -32,7 +32,7 @@ const Paginate: React.FC<Props> = (props) => {
                         // href="#"
                         onClick={props.onClickNext}
                     >
-                        Next <svg xmlns="http://www.w3.org/2000/svg" className="ionicon w-5" viewBox="0 0 512 512"><title>Chevron Forward</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144" /></svg>
+                        <span className='hidden sm:hidden md:hidden lg:block xl:block'>Next</span> <svg xmlns="http://www.w3.org/2000/svg" className="ionicon w-5" viewBox="0 0 512 512"><title>Chevron Forward</title><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="48" d="M184 112l144 144-144 144" /></svg>
                     </span>
                 </li>
             </ul>

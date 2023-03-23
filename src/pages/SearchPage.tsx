@@ -22,7 +22,7 @@ const Search = (props: Props) => {
 
 
     return (
-        <div>
+        <div className='bg-white dark:bg-dark'>
             <Header />
             <SearchComponent title={title} onChangeTitle={onChangeTitle}/>
             <MoviesComponent title={title}/>

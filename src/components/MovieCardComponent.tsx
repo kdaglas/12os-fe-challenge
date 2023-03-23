@@ -21,7 +21,7 @@ const MovieCard: React.FC<Movie> = (Movie) => {
                 />
 
                 <div className="py-2">
-                    <p className="text-base font-semibold leading-relaxed text-gray-800 ">
+                    <p className="text-base text-black dark:text-white font-semibold leading-relaxed text-gray-800 ">
                         {Movie.Title}
                     </p>
 
