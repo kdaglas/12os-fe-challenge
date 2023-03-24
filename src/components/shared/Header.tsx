@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/images/normalLogo.png';
-// import logoWhite from '../../assets/images/whiteLogo.png';
+import logoWhite from '../../assets/images/whiteLogo.png';
 
 
 export interface IAppProps {
@@ -35,13 +35,13 @@ const Header = (props: IAppProps) => {
     return (
         <div className="fixed top-0 z-10 flex justify-center items-center w-full h-18 drop-shadow-md bg-white dark:bg-dark">
             <div className="w-10.5/12 sm:w-10.5/12 md:w-9.5/12 lg:w-9.5/12 xl:w-9.5/12 flex justify-between items-center mx-auto">
-                <div className=''>
+                <div className='block dark:hidden'>
                     <Link to="/"><img alt="" src={logo} width="170px" /></Link>
                 </div>
 
-                {/* <div className=''>
-                <Link to="/"><img alt="" src={logoWhite} width="170px" /></Link>
-                </div> */}
+                <div className='hidden dark:block'>
+                    <Link to="/"><img alt="" src={logoWhite} width="170px" /></Link>
+                </div>
 
                 <ul className="flex justify-between items-center font-medium">
                     <button className="bg-primary duration-300 hover:bg-rose-700 flex text-white border border-primary rounded-md my-auto mx-1.5 text-sm inline-block px-2 py-1 cursor-pointer text-white p-4 rounded-3xl" onClick={handleThemeSwitch}>

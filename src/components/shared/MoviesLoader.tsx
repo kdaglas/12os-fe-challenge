@@ -10,7 +10,7 @@ const MoviesLoader = (props: Props) => {
 
 			<div className='mb-1 flex justify-between'>
 
-				<h4 className="text-base font-normal flex">
+				<h4 className="text-base text-black dark:text-white font-normal flex">
 					Page: <div className='w-14 h-5 ml-2 bg-gray-200 rounded-lg dark:bg-gray-700'></div>
 				</h4>
 
@@ -166,7 +166,7 @@ const MoviesLoader = (props: Props) => {
 
 			<div className='mt-5 mb-1 flex justify-between'>
 
-				<h4 className="text-base font-normal flex">
+				<h4 className="text-base text-black dark:text-white font-normal flex">
 					Results: <div className='w-14 h-5 ml-2 bg-gray-200 rounded-lg dark:bg-gray-700'></div>
 				</h4>
 

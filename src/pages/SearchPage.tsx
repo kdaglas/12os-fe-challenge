@@ -1,31 +1,19 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import MoviesComponent from '../components/MoviesComponent';
 import SearchComponent from '../components/SearchComponent';
 import Header from '../components/shared/Header';
+import { MovieContext } from '../context/MovieContext';
 
-export interface Props {
-}
+
+export interface Props {}
 
 const Search = (props: Props) => {
-
-    const [title, setTitle] = useState<string>("")
-
-    const onChangeTitle = (event: React.ChangeEvent<HTMLInputElement>) => {
-        // if (event.target.value.length > 0) {
-        setTitle(event.target.value)
-        console.log(event.target.value)
-        // } else {
-        //     setTitle("man")
-        // }
-
-    }
-
 
     return (
         <div className='bg-white dark:bg-dark'>
             <Header />
-            <SearchComponent title={title} onChangeTitle={onChangeTitle}/>
-            <MoviesComponent title={title}/>
+            <SearchComponent/>
+            <MoviesComponent/>
         </div>
     );
 

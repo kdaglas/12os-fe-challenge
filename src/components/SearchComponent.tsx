@@ -1,11 +1,26 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
+import { MovieContext } from '../context/MovieContext';
 
-interface Props {
-    title: string,
-    onChangeTitle: (e: React.ChangeEvent<HTMLInputElement>) => void
+
+export interface Props {
+    // title: string,
+    // onChangeTitle: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-const SearchComponent = (props: Props) => {
+const SearchComponent: React.FC<Props> = (props) => {
+
+    const { setPropTitle } = useContext(MovieContext)
+    const [title, setTitle] = useState<string>("")
+
+    const onChangeTitle = (event: React.ChangeEvent<HTMLInputElement>) => {
+        // if (event.target.value.length > 0) {
+        setTitle(event.target.value)
+        setPropTitle(event.target.value)
+        // console.log(event.target.value)
+        // } else {
+        //     setTitle("man")
+        // }
+    }
 
     return (
         <div className="w-full h-60 mt-18 flex justify-center items-center bg-hero bg-no-repeat bg-cover">
@@ -24,8 +39,8 @@ const SearchComponent = (props: Props) => {
                         <input
                             type="text"
                             id="voice-search"
-                            onChange={props.onChangeTitle}
-                            value={props.title}
+                            onChange={onChangeTitle}
+                            value={title}
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-base focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 h-14 rounded-full"
                             placeholder="Search for a movie, a serie or an animation..."
                             required
@@ -42,7 +57,7 @@ const SearchComponent = (props: Props) => {
                     </button>
                 </form>
 
-                {props.title && props.title.length < 3 && 
+                {title && title.length < 3 &&
                     <span className='text-primary font-medium flex justify-center'>Please type three or more characters</span>
                 }
 
