@@ -12,7 +12,7 @@ Kuky films (12os-fe-challenge) is a mini movie application that shows a small se
  
 This is a simple two-page web application that allows users to search for movies, series or animation by title and view a movies details. The application uses the [OMDb API](http://www.omdbapi.com/) to fetch movie data.
 
-![](mainCord.gif)
+![](final12os.gif)
 
 ### Getting Started
 
