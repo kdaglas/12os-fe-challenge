@@ -14,6 +14,30 @@ This is a simple two-page web application that allows users to search for movies
 
 ![](mainCord.gif)
 
+### Getting Started
+
+Aquire the project by cloning it to your computer either by downloading the zip or using git.
+To use git, run the code below:
+```
+    git clone https://github.com/kdaglas/12os-fe-challenge.git
+```
+
+Run the Node package manager (npm) command to install the necessary packages since the application is dependant on them:
+```
+    npm install
+```
+
+Start the project by running the following command:
+```
+    npm start
+```
+
+### Prerequisites
+
+- Use a web browser preferrably Chrome.
+- You need to have Python3 installed on your computer. To install it go to:
+  Python [https://www.python.org/]
+
 ### Features
  
 - A user can view a small set of movies with their year of production.
@@ -63,17 +87,21 @@ result.
 - Added gif to read me.
  
 ### Technologies used
- 
+
+
 | Badge                | URL                  |
 | -------------------- | -------------------- |
-| <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white"/> | Node Package manager |
+| <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white"/> | [NPM](https://www.npmjs.com/) - package manager for Node.js |
 | <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/> | [HTML5](https://html.com/) - Markup language |
 | <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/> | [CSS3](https://css-tricks.com/) - Style sheet language |
-| <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"/> | [JavaScript](https://www.javascript.com/) - High-level, interpreted programming language |
-| <img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white"/> | [Styled Components](https://styled-components.com/) - Popular library that is used to style React applications. |
+| <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white"/> | [TailwindCSS](https://tailwindcss.com/) - Popular library that is used to style web applications. |
+| <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white"/> | [TypeScript](https://www.typescriptlang.org/) - A strongly typed programming language that builds on JavaScript |
 | <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/> | [React](https://reactjs.org/docs/getting-started.html) - A JavaScript library for building user interfaces |
-| <img src="https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white"/> | Jest, a javascript testing library |
- 
- 
+
+
+| <img src="https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white"/> | [Jest](https://jestjs.io/), a javascript testing library |
+
+
 ### Author
-- <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/>  [kdaglas](https://github.com/kdaglas)
+
+[kdaglas](https://github.com/kdaglas)
