@@ -1,41 +1,47 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 import { Movie } from '../utils/interfaces/MovieInterface';
 import NoContent from './shared/NoContent';
 import MovieDetailLoader from './shared/MovieDetailLoader';
+import { MovieDetailContext } from '../context/MovieDetailContext';
 
 
 export interface Props { }
 
 
-const MovieDetailComponent = (props: Props) => {
+const MovieDetailComponent:React.FC<Props> = (Props) => {
 
-    const [loading, setLoading] = useState<boolean>(false);
-    const [movieDetails, setMovieDetails] = useState<Movie>();
-    const { movieID } = useParams();
+    const {
+        loading,
+        movieDetails,
+    } = useContext(MovieDetailContext)
 
-    useEffect(() => {
-        fetchMovieDetails()
-    }, [movieID]);
+    // const [loading, setLoading] = useState<boolean>(false);
+    // const [movieDetails, setMovieDetails] = useState<Movie>();
+    // const { movieID } = useParams();
 
-    const fetchMovieDetails = async () => {
-        try {
-            setLoading(true);
-            await axios.get<Movie>(`https://www.omdbapi.com/?i=${movieID}&plot=full&apikey=1a4e0ee6`)
-                .then(response => {
-                    setLoading(false);
-                    if (response.data.Response === "True") {
-                        setMovieDetails(response.data);
-                    } else {
-                        setMovieDetails(undefined);
-                    }
-                });
-        } catch (error) {
-            console.log(error)
-        }
-    }
+    // useEffect(() => {
+    //     fetchMovieDetails()
+    // }, [movieID]);
+
+    // const fetchMovieDetails = async () => {
+    //     try {
+    //         setLoading(true);
+    //         await axios.get<Movie>(`https://www.omdbapi.com/?i=${movieID}&plot=full&apikey=1a4e0ee6`)
+    //             .then(response => {
+    //                 setLoading(false);
+    //                 if (response.data.Response === "True") {
+    //                     setMovieDetails(response.data);
+    //                 } else {
+    //                     setMovieDetails(undefined);
+    //                 }
+    //             });
+    //     } catch (error) {
+    //         console.log(error)
+    //     }
+    // }
 
     return (
         <div className="pt-24 pb-7 mx-auto w-10.5/12 sm:w-10.5/12 md:w-9.5/12 lg:w-9.5/12 xl:w-9.5/12 ">

@@ -1,5 +1,5 @@
-import axios from 'axios';
 import React, { useEffect, useState, Dispatch, SetStateAction } from 'react';
+import axios from 'axios';
 import { MovieList } from '../utils/interfaces/MovieInterface';
 
 
@@ -45,19 +45,19 @@ const MovieProvider = (props: MovieProviderInterface) => {
 
     useEffect(() => {
         setPage(1)
-        fetchLatestMovies()
+        fetchMovies()
     }, [title])
 
     useEffect(() => {
-        fetchLatestMovies()
+        fetchMovies()
     }, [page]);
 
 
-    const fetchLatestMovies = async () => {
+    const fetchMovies = async () => {
         try {
             setLoading(true);
             setTotalPages(1);
-            await axios.get<MovieList>(`https://www.omdbapi.com/?s=${props.title ? props.title : title}&page=${page}&apikey=1a4e0ee6`)
+            await axios.get<MovieList>(`https://www.omdbapi.com/?s=${title ? title : "man"}&page=${page}&apikey=1a4e0ee6`)
                 .then(response => {
                     setLoading(false);
                     if (response.data.Response === "True") {

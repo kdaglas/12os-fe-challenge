@@ -13,13 +13,8 @@ const SearchComponent: React.FC<Props> = (props) => {
     const [title, setTitle] = useState<string>("")
 
     const onChangeTitle = (event: React.ChangeEvent<HTMLInputElement>) => {
-        // if (event.target.value.length > 0) {
         setTitle(event.target.value)
         setPropTitle(event.target.value)
-        // console.log(event.target.value)
-        // } else {
-        //     setTitle("man")
-        // }
     }
 
     return (
@@ -57,9 +52,13 @@ const SearchComponent: React.FC<Props> = (props) => {
                     </button>
                 </form>
 
-                {title && title.length < 3 &&
-                    <span className='text-primary font-medium flex justify-center'>Please type three or more characters</span>
-                }
+                <span
+                    data-testid="error"
+                    style={{ visibility: title && title.length < 3 ? "visible" : "hidden" }}
+                    className={`${title && title.length < 3 ? "visible" : "invisible"} text-primary font-medium flex justify-center`}
+                >
+                    Please type three or more characters
+                </span>
 
             </div>
         </div>
