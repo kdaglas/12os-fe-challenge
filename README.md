@@ -41,8 +41,8 @@ to run tests, simply run any of the following commands below:
 ### Prerequisites
 
 - Use a web browser preferrably Chrome.
-- You need to have Python3 installed on your computer. To install it go to:
-  Python [https://www.python.org/]
+- You may need to have Node installed on your computer. To install it go to:
+  (NodeJS)[https://nodejs.org/en] - an open-source, cross-platform JavaScript runtime environment.
 
 ### Features
  
