@@ -45,21 +45,15 @@ to run tests, simply run any of the following commands below:
   (NodeJS)[https://nodejs.org/en] - an open-source, cross-platform JavaScript runtime environment.
 
 ### Features
- 
+
 - A user can view a small set of movies with their year of production.
 - A user can search any movie of their choice by movie title.
 - A user can view the details of a single movie.
 - A user can view the application on all kinds of devices and browsers.
 - A user can switch from light to dark mode and from dark to light mode
 
-
-
-![](cord.gif)
-
-
 ### Tasks accomplished
  
-- When the application is loaded, a set of movies of page 1 are displayed.
 - Use of ReactJS to build the application, and use of React Hooks to manage state.
 - Creation of axios API endpoint to fetch the movies from the OMDb API.
 - Implementation of two pages: a search page and a movie details page.
@@ -68,29 +62,29 @@ to run tests, simply run any of the following commands below:
 - Implementation of a movie details page that displays additional information about a movie when a user clicks on a search
 result.
 - The application is responsive and works well on both desktop and mobile devices.
-- Use of CSS to style the application.
+- Use of CSS (TailwindCSS) to style the application.
 - Use of Git for version control and the project is hosted here on GitHub.
 - Use of modern JavaScript syntax and following of best practices for React development.
-- Design Movie item card to hold single movie item.
-- Design the not found movie image, logo and no data found for the movie section.
-- Design and load results instantly as the user types or as keywords are typed into the search bar.
-- Add a count of all movies at the top.
-- Add all the responsive CSS for the app to run smoothly on mobile devices.
  
 ### Added features | Tasks accomplished
 
+- When the application is loaded, a set of movies of page 1 are displayed.
 - Implementation of the application using Typescript instead of JavaScript.
 - Writing of clean, readable, and maintainable code.
 - Implementation of pagination on the home page.
 - Use of TailwindCSS framework to style the application.
 - Writing of unit tests using Jest.
-- Add a no internet connection image to tell user when there is no internet to improve user experience
 - Add an error message during search so that a user doesn't forget to add a keyword.
 - Add a loader for incase of slow internet for a user not to lose hope.
 - Design and add the favicon to cater for future SEO purposes.
 - Error handling in the axios functionality to cater for any errors
 - Host the app on netlify for easy accessibility
 - Added gif to read me.
+- Design the not found movie image, logo and no data found for the movie section.
+- Design and load results instantly as the user types or as keywords are typed into the search bar.
+- Add a count of all movies at the top.
+- Add all the responsive CSS for the app to run smoothly on mobile devices.
+- Design Movie item card to hold single movie item.
  
 ### Technologies used
 
@@ -103,8 +97,6 @@ result.
 | <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white"/> | [TailwindCSS](https://tailwindcss.com/) - Popular library that is used to style web applications. |
 | <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white"/> | [TypeScript](https://www.typescriptlang.org/) - A strongly typed programming language that builds on JavaScript |
 | <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/> | [React](https://reactjs.org/docs/getting-started.html) - A JavaScript library for building user interfaces |
-
-
 | <img src="https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white"/> | [Jest](https://jestjs.io/), a javascript testing library |
 
 
