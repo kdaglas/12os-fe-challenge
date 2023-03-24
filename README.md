@@ -31,6 +31,12 @@ Start the project by running the following command:
 ```
     npm start
 ```
+to run tests, simply run any of the following commands below:
+```
+    npm run test
+    npm run test:coverage
+    npm run test:watch 
+```
 
 ### Prerequisites
 
