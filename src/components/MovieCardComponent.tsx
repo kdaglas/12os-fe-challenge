@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { MovieDetailInterface } from '../utils/interfaces/MovieInterface';
 
 
-const MovieCard: React.FC<MovieDetailInterface> = (Movie) => {
+const MovieCardComponent: React.FC<MovieDetailInterface> = (Movie) => {
 
     return (
         <div className="my-4 duration-300 hover:-translate-y-1">
@@ -41,4 +41,4 @@ const MovieCard: React.FC<MovieDetailInterface> = (Movie) => {
     );
 };
 
-export default MovieCard;
+export default MovieCardComponent;

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { MovieContextInterface, MovieDetailInterface, MovieListInterface, MovieProviderInterface } from '../utils/interfaces/MovieInterface';
 import { fetchOMDBMovieDetails, fetchOMDBMovies } from '../utils/MoviesAPI';
 
@@ -9,11 +8,15 @@ const defaultValue = {
     page: 1,
     totalPages: 1,
     loading: false,
+    axiosError:"",
     setPage: () => 1,
     setTotalPages: () => 1,
     setLoading: () => false,
     setPropTitle: () => false,
-    setMovieID: () => ""
+    setMovieID: () => "",
+    setAxiosError: () => "",
+
+
 } as MovieContextInterface
 
 export const MovieContext = React.createContext<MovieContextInterface>(defaultValue)
@@ -25,7 +28,7 @@ const MovieProvider: React.FC<MovieProviderInterface> = (props) => {
     const [totalPages, setTotalPages] = useState<number>(1)
     const [loading, setLoading] = useState<boolean>(false);
     const [title, setPropTitle] = useState<string>("man");
-    const [serverError, setServerError] = useState<string>("");
+    const [axiosError, setAxiosError] = useState<string>("");
 
     // const [setPropTitle] = useState<string>("man");
     const [movieObject, setMovieObject] = useState<MovieListInterface>();
@@ -42,7 +45,7 @@ const MovieProvider: React.FC<MovieProviderInterface> = (props) => {
             try {
                 setLoading(true);
                 setTotalPages(1);
-                setServerError("")
+                setAxiosError("")
 
                 // call the endpoint from the api file
                 const server_response = await fetchOMDBMovies(page, searchedTitle);
@@ -57,11 +60,8 @@ const MovieProvider: React.FC<MovieProviderInterface> = (props) => {
                     setTotalPages(1)
                 }
             } catch (error) {
-                if (axios.isAxiosError(error)) {
-                    setServerError("Error message: " + error.message)
-                } else {
-                    setServerError("Unexpected error: " + error)
-                }
+                setLoading(false);
+                setAxiosError("Server encoutered an " +error)
             }
 
         }
@@ -74,7 +74,7 @@ const MovieProvider: React.FC<MovieProviderInterface> = (props) => {
 
             try {
                 setLoading(true);
-                setServerError("")
+                setAxiosError("")
 
                 // call the endpoint from the api file
                 const server_response = await fetchOMDBMovieDetails(movieID);
@@ -87,11 +87,8 @@ const MovieProvider: React.FC<MovieProviderInterface> = (props) => {
                     setMovieDetails(undefined);
                 }
             } catch (error) {
-                if (axios.isAxiosError(error)) {
-                    setServerError("Error message: " + error.message)
-                } else {
-                    setServerError("Unexpected error: " + error)
-                }
+                setLoading(false);
+                setAxiosError("Server encoutered an " +error)
             }
 
         }
@@ -109,11 +106,13 @@ const MovieProvider: React.FC<MovieProviderInterface> = (props) => {
                 loading,
                 movieObject,
                 movieDetails,
+                axiosError,
                 setPage,
                 setTotalPages,
                 setLoading,
                 setPropTitle,
-                setMovieID
+                setMovieID,
+                
             }}
         >
             {props.children}

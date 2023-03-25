@@ -6,14 +6,12 @@ import MovieDetailLoader from './shared/MovieDetailLoader';
 import { MovieContext } from '../context/MovieContext';
 
 
-export interface Props { }
-
-
-const MovieDetailComponent: React.FC<Props> = (Props) => {
+const MovieDetailComponent: React.FC = () => {
 
     const {
         loading,
         movieDetails,
+        axiosError,
         setMovieID
     } = useContext(MovieContext)
 
@@ -96,8 +94,14 @@ const MovieDetailComponent: React.FC<Props> = (Props) => {
                 </div>
             }
 
-            {!loading && !movieDetails &&
+            {!loading && !movieDetails && !axiosError &&
                 <NoContent />
+            }
+
+            {axiosError &&
+                <NoContent
+                    text={axiosError} 
+                />
             }
 
             {loading &&

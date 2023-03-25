@@ -4,7 +4,7 @@ import SearchComponent from '../components/SearchComponent';
 import Header from '../components/shared/Header';
 
 
-const Search: React.FC = () => {
+const SearchPage: React.FC = () => {
 
     return (
         <div className='bg-white dark:bg-dark'>
@@ -16,4 +16,4 @@ const Search: React.FC = () => {
 
 }
 
-export default Search;
+export default SearchPage;
