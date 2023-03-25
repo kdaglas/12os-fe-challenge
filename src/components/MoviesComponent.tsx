@@ -1,7 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useContext } from 'react';
 import MovieCard from './MovieCardComponent';
-import { MovieList } from '../utils/interfaces/MovieInterface';
 import Paginate from './shared/PaginateBtns';
 import NoContent from './shared/NoContent';
 
@@ -10,11 +8,7 @@ import SkeletonLoader from './shared/MoviesLoader';
 import { MovieContext } from '../context/MovieContext';
 
 
-export interface Props {
-    // title?: string | any
-}
-
-const MoviesComponent: React.FC<Props> = (props) => {
+const MoviesComponent: React.FC = () => {
 
     const {
         page,
@@ -22,19 +16,31 @@ const MoviesComponent: React.FC<Props> = (props) => {
         loading,
         movieObject,
         setPage,
-        setLoading
+        // setLoading
     } = useContext(MovieContext)
 
+    // const onClickNext = () => {
+    //     if (page < totalPages) {
+    //         setLoading(true)
+    //         setPage(page + 1)
+    //     }
+    // }
+
+    // const onClickPrevious = () => {
+    //     if (page > 1) {
+    //         setLoading(true)
+    //         setPage!(page! - 1)
+    //     }
+    // }
+
     const onClickNext = () => {
-        if (page < totalPages) {
-            setLoading(true)
-            setPage(page + 1)
+        if (page! < totalPages!) {
+            setPage!(page! + 1)
         }
     }
 
     const onClickPrevious = () => {
-        if (page > 1) {
-            setLoading(true)
+        if (page! > 1) {
             setPage!(page! - 1)
         }
     }
@@ -46,12 +52,12 @@ const MoviesComponent: React.FC<Props> = (props) => {
                 <>
                     <div className='mb-1 flex justify-between'>
                         <h4 className="text-base text-black dark:text-white font-normal">
-                            Page: <span className='text-primary'>{page} of {totalPages}</span>
+                            <span data-testid="page">Page:</span> <span className='text-primary'>{page} of {totalPages}</span>
                         </h4>
 
                         <Paginate
-                            page={page}
-                            totalPages={totalPages}
+                            page={page!}
+                            totalPages={totalPages!}
                             onClickPrevious={onClickPrevious}
                             onClickNext={onClickNext}
                         />

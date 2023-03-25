@@ -1,19 +1,16 @@
-import React, { useContext, useState } from 'react';
+import React from 'react';
 import MoviesComponent from '../components/MoviesComponent';
 import SearchComponent from '../components/SearchComponent';
 import Header from '../components/shared/Header';
-import { MovieContext } from '../context/MovieContext';
 
 
-export interface Props {}
-
-const Search = (props: Props) => {
+const Search: React.FC = () => {
 
     return (
         <div className='bg-white dark:bg-dark'>
             <Header />
-            <SearchComponent/>
-            <MoviesComponent/>
+            <SearchComponent />
+            <MoviesComponent />
         </div>
     );
 

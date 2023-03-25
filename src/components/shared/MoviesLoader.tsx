@@ -1,11 +1,10 @@
 import React from 'react'
 import Paginate from './PaginateBtns'
 
-type Props = {}
 
-const MoviesLoader = (props: Props) => {
+const MoviesLoader: React.FC = () => {
+	
 	return (
-
 		<div className="animate-pulse">
 
 			<div className='mb-1 flex justify-between'>

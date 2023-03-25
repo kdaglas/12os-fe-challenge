@@ -1,24 +1,8 @@
-import React, { useEffect, useState, Dispatch, SetStateAction } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { MovieList } from '../utils/interfaces/MovieInterface';
+import { MovieContextInterface, MovieDetailInterface, MovieListInterface, MovieProviderInterface } from '../utils/interfaces/MovieInterface';
+import { fetchOMDBMovieDetails, fetchOMDBMovies } from '../utils/MoviesAPI';
 
-
-export interface MovieProviderInterface {
-    title?: string | any,
-    children: React.ReactNode
-}
-
-export interface MovieContextInterface {
-    title: string | any,
-    page: number,
-    totalPages: number,
-    loading: boolean,
-    movieObject?: MovieList,
-    setPage: Dispatch<SetStateAction<number>>,
-    setTotalPages: Dispatch<SetStateAction<number>>,
-    setLoading: Dispatch<SetStateAction<boolean>>,
-    setPropTitle: Dispatch<SetStateAction<string>>,
-}
 
 const defaultValue = {
     title: "man",
@@ -29,49 +13,92 @@ const defaultValue = {
     setTotalPages: () => 1,
     setLoading: () => false,
     setPropTitle: () => false,
+    setMovieID: () => ""
 } as MovieContextInterface
 
 export const MovieContext = React.createContext<MovieContextInterface>(defaultValue)
 
 
-const MovieProvider = (props: MovieProviderInterface) => {
+const MovieProvider: React.FC<MovieProviderInterface> = (props) => {
 
     const [page, setPage] = useState<number>(1);
     const [totalPages, setTotalPages] = useState<number>(1)
     const [loading, setLoading] = useState<boolean>(false);
     const [title, setPropTitle] = useState<string>("man");
+    const [serverError, setServerError] = useState<string>("");
+
     // const [setPropTitle] = useState<string>("man");
-    const [movieObject, setMovieObject] = useState<MovieList>();
+    const [movieObject, setMovieObject] = useState<MovieListInterface>();
+
+    const [movieDetails, setMovieDetails] = useState<MovieDetailInterface>();
+    const [movieID, setMovieID] = useState<string>("")
 
     useEffect(() => {
-        setPage(1)
-        fetchMovies()
-    }, [title])
+        const fetchMovies = async () => {
 
-    useEffect(() => {
-        fetchMovies()
-    }, [page]);
+            let defaultTile = "man";
+            const searchedTitle = title ? title : defaultTile
 
+            try {
+                setLoading(true);
+                setTotalPages(1);
+                setServerError("")
 
-    const fetchMovies = async () => {
-        try {
-            setLoading(true);
-            setTotalPages(1);
-            await axios.get<MovieList>(`https://www.omdbapi.com/?s=${title ? title : "man"}&page=${page}&apikey=1a4e0ee6`)
-                .then(response => {
-                    setLoading(false);
-                    if (response.data.Response === "True") {
-                        setMovieObject(response.data);
-                        setTotalPages(Math.ceil((Number(response?.data?.totalResults)) / 10))
-                    } else {
-                        setMovieObject(undefined);
-                        setTotalPages(1)
-                    }
-                });
-        } catch (error) {
-            console.log(error)
+                // call the endpoint from the api file
+                const server_response = await fetchOMDBMovies(page, searchedTitle);
+
+                setLoading(false);
+
+                if (server_response.data.Response === "True") {
+                    setMovieObject(server_response.data);
+                    setTotalPages(Math.ceil((Number(server_response.data.totalResults)) / 10))
+                } else {
+                    setMovieObject(undefined);
+                    setTotalPages(1)
+                }
+            } catch (error) {
+                if (axios.isAxiosError(error)) {
+                    setServerError("Error message: " + error.message)
+                } else {
+                    setServerError("Unexpected error: " + error)
+                }
+            }
+
         }
-    }
+
+        fetchMovies()
+    }, [title, page])
+
+    useEffect(() => {
+        const fetchMovieDetails = async () => {
+
+            try {
+                setLoading(true);
+                setServerError("")
+
+                // call the endpoint from the api file
+                const server_response = await fetchOMDBMovieDetails(movieID);
+
+                setLoading(false);
+
+                if (server_response.data.Response === "True") {
+                    setMovieDetails(server_response.data);
+                } else {
+                    setMovieDetails(undefined);
+                }
+            } catch (error) {
+                if (axios.isAxiosError(error)) {
+                    setServerError("Error message: " + error.message)
+                } else {
+                    setServerError("Unexpected error: " + error)
+                }
+            }
+
+        }
+
+        fetchMovieDetails()
+    }, [movieID]);
+
 
     return (
         <MovieContext.Provider
@@ -81,10 +108,12 @@ const MovieProvider = (props: MovieProviderInterface) => {
                 totalPages,
                 loading,
                 movieObject,
+                movieDetails,
                 setPage,
                 setTotalPages,
                 setLoading,
-                setPropTitle
+                setPropTitle,
+                setMovieID
             }}
         >
             {props.children}

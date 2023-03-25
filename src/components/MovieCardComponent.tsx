@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Movie } from '../utils/interfaces/MovieInterface';
+import { MovieDetailInterface } from '../utils/interfaces/MovieInterface';
 
 
-const MovieCard: React.FC<Movie> = (Movie) => {
+const MovieCard: React.FC<MovieDetailInterface> = (Movie) => {
 
     return (
         <div className="my-4 duration-300 hover:-translate-y-1">

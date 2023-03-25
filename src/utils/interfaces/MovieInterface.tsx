@@ -1,4 +1,7 @@
-export interface Movie {
+import React, { Dispatch, SetStateAction } from 'react';
+
+
+export interface MovieDetailInterface {
     Title: string,
     Year: string,
     Rated?: string,
@@ -25,9 +28,33 @@ export interface Movie {
     Response?: string
 }
 
-export interface MovieList {
+export interface MovieListInterface {
     Response: string,
-    Search: Movie[],
+    Search: MovieDetailInterface[],
     totalResults: string
 }
 
+export interface MovieProviderInterface {
+    children: React.ReactNode
+}
+
+export interface MovieContextInterface {
+    title: string | any,
+    page: number,
+    totalPages: number,
+    loading: boolean,
+    movieObject?: MovieListInterface,
+    movieDetails?: MovieDetailInterface,
+    setPage: Dispatch<SetStateAction<number>>,
+    setTotalPages: Dispatch<SetStateAction<number>>,
+    setLoading: Dispatch<SetStateAction<boolean>>,
+    setPropTitle: Dispatch<SetStateAction<string>>,
+    setMovieID: Dispatch<SetStateAction<string>>
+}
+
+export interface PaginationInterface {
+    page: number,
+    totalPages: number,
+    onClickPrevious: () => void,
+    onClickNext: () => void
+}

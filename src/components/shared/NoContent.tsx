@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import nocontent from '../../assets/images/no_data.svg'
 
 
@@ -14,7 +14,7 @@ const NoContent: React.FC = () => {
                     className="img-fluid mx-auto d-block my-10"
                 />
 
-                <h3 className="text-3xl font-medium  mb-5">Oops! Kuky films says:</h3>
+                <h3 className="text-3xl font-medium  mb-5 text-black dark:text-white">Oops! Kuky films says:</h3>
                 <p className="text-gray-500">There seems not be any available<br /> data here, sorry.</p>
             </div>
         </div>
