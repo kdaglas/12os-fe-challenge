@@ -1,75 +1,48 @@
-import React, { useState } from 'react';
 import axios from 'axios';
-import { Movie, MovieList } from './interfaces/MovieInterface';
+import { MovieDetailInterface, MovieListInterface } from './interfaces/MovieInterface';
 
-
-// interface GetMoviesResponse {
-//     data: Movie[]
-// }
-
-// const url = "https://www.omdbapi.com/?apikey="
-// const apiKey = "1a4e0ee6";
-// const baseUrl = url + apiKey;
-
-// // variables
-// const search = "man";
-// const year = 2022
-// const type = "movie";
-// const pageNumber = 1;
-
-// https://www.omdbapi.com/?s=man&y=2023&type=movie&page=1&apikey=1a4e0ee6
 
 /** 
  * AXIOS REQUEST TO FETCH 
  * LATEST MOVIES WITH ANY 
  * KEYWORD FROM THE OMDB API
  */
-// export const getLatestMovies = async ({ pageNumber, search, year, type }: Movie) => {
-export const getLatestMovies = async () => {
 
-    // const endPoint = "&s=" + search + "&y=" + year + "&type=" + type + "&page=" + pageNumber;
+export const fetchOMDBMovies = async (page: number, title: string | any) => {
 
-    try {
-        let response = axios.get<MovieList>('https://www.omdbapi.com/?s=man&y=2022&type=movie&page=1&apikey=1a4e0ee6')
+    const { data } = await axios.get<MovieListInterface>(`https://www.omdbapi.com/?s=${title}&page=${page}&apikey=1a4e0ee6`,
+        {
+            headers: {
+                Accept: 'application/json'
+            },
+        },
+    )
 
-        console.log(response)
-        return response
-    } catch (error) {
-        let connError = {
-            'status': 'conn',
-            'details': {
-                'message': 'Oops!!! Failed to reach the server. Please check your internet connection!',
-                'content': false
-            }
-        }
-        return connError;
+    return {
+        'data': data
     }
 
-    // try {
-    //     const { data, status } = await axios.get<GetMoviesResponse>(
-    //         baseUrl + endPoint,
-    //         // "http://www.omdbapi.com/?i=tt3896198&apikey=1a4e0ee6",
-    //         {
-    //             headers: {
-    //                 Accept: 'application/json'
-    //             },
-    //         },
-    //     )
+}
 
-    //     // console.log(JSON.stringify(data, null, 4));
-    //     console.log("Response status is: ", status)
-    //     return {
-    //         'response': status,
-    //         'data': data
-    //     }
-    // } catch (error) {
-    //     if (axios.isAxiosError(error)) {
-    //         console.log("Error message: ", error.message);
-    //         return error.message;
-    //     } else {
-    //         console.log("Unexpected error: ", error);
-    //         return 'Oops!!! Failed to reach the server. Please check your internet connection!'
-    //     }
-    // }
+
+/** 
+ * AXIOS REQUEST TO FETCH 
+ * DETAILS OF A SINGLE MOVIE
+ * USING ITS ID FROM THE OMDB API
+ */
+
+export const fetchOMDBMovieDetails = async (movieID: string | any) => {
+
+    const { data } = await axios.get<MovieDetailInterface>(`https://www.omdbapi.com/?i=${movieID}&plot=full&apikey=1a4e0ee6`,
+        {
+            headers: {
+                Accept: 'application/json'
+            },
+        },
+    )
+
+    return {
+        'data': data
+    }
 
 }

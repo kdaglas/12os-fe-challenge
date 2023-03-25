@@ -1,47 +1,34 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
 
-import { Movie } from '../utils/interfaces/MovieInterface';
 import NoContent from './shared/NoContent';
 import MovieDetailLoader from './shared/MovieDetailLoader';
+import { MovieContext } from '../context/MovieContext';
 
 
 export interface Props { }
 
 
-const MovieDetailComponent = (props: Props) => {
+const MovieDetailComponent: React.FC<Props> = (Props) => {
 
-    const [loading, setLoading] = useState<boolean>(false);
-    const [movieDetails, setMovieDetails] = useState<Movie>();
+    const {
+        loading,
+        movieDetails,
+        setMovieID
+    } = useContext(MovieContext)
+
     const { movieID } = useParams();
 
     useEffect(() => {
-        fetchMovieDetails()
-    }, [movieID]);
+        setMovieID(movieID!)
+    }, [movieID, setMovieID]);
 
-    const fetchMovieDetails = async () => {
-        try {
-            setLoading(true);
-            await axios.get<Movie>(`https://www.omdbapi.com/?i=${movieID}&plot=full&apikey=1a4e0ee6`)
-                .then(response => {
-                    setLoading(false);
-                    if (response.data.Response === "True") {
-                        setMovieDetails(response.data);
-                    } else {
-                        setMovieDetails(undefined);
-                    }
-                });
-        } catch (error) {
-            console.log(error)
-        }
-    }
 
     return (
         <div className="pt-24 pb-7 mx-auto w-10.5/12 sm:w-10.5/12 md:w-9.5/12 lg:w-9.5/12 xl:w-9.5/12 ">
 
             {!loading && movieDetails &&
-                <div className='flex sm:inline-block md:block lg:flex xl:flex items-center'>
+                <div className='inline-block sm:inline-block md:flex lg:flex xl:flex items-center'>
                     <div className='w-10.5/12 sm:w-10.5/12 md:w-9/12 lg:w-1/2 xl:w-1/2'>
                         <img
                             alt="movie-poster"
@@ -50,7 +37,7 @@ const MovieDetailComponent = (props: Props) => {
                         />
                     </div>
 
-                    <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 my-6 lg:mt-0">
+                    <div className="w-full sm:w-full md:w-full lg:w-1/2 xl:w-1/2 lg:pl-10 lg:py-6 my-6 lg:mt-0">
                         <small className="text-sm title-font border border-gray-500 px-2 py-1 tracking-widest rounded text-gray-500">
                             {movieDetails?.Type}
                         </small>

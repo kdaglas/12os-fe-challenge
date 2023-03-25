@@ -1,15 +1,9 @@
-import * as React from 'react';
-
-export interface Props {
-    page: number,
-    totalPages: number,
-    onClickPrevious: () => void,
-    onClickNext: () => void
+import React from 'react';
+import { PaginationInterface } from '../../utils/interfaces/MovieInterface';
 
 
-}
 
-const Paginate: React.FC<Props> = (props) => {
+const Paginate: React.FC<PaginationInterface> = (props) => {
     return (
         <div>
             <ul className='list-none m-0 p-0 flex justify-between'>
