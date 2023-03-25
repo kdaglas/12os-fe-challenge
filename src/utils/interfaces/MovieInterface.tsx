@@ -45,11 +45,13 @@ export interface MovieContextInterface {
     loading: boolean,
     movieObject?: MovieListInterface,
     movieDetails?: MovieDetailInterface,
+    axiosError?:string,
     setPage: Dispatch<SetStateAction<number>>,
     setTotalPages: Dispatch<SetStateAction<number>>,
     setLoading: Dispatch<SetStateAction<boolean>>,
     setPropTitle: Dispatch<SetStateAction<string>>,
     setMovieID: Dispatch<SetStateAction<string>>
+
 }
 
 export interface PaginationInterface {

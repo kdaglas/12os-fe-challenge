@@ -35,16 +35,16 @@ const MovieDetailLoader: React.FC = () => {
                         </span>
                     </div>
 
-                    <p className=" mb-6">
+                    <div className=" mb-6">
                         <div className='w-full mb-3 h-4 bg-gray-200 rounded-lg dark:bg-gray-700'></div>
                         <div className='w-full mb-3 h-4 bg-gray-200 rounded-lg dark:bg-gray-700'></div>
                         <div className='w-full mb-3 h-4 bg-gray-200 rounded-lg dark:bg-gray-700'></div>
                         <div className='w-full mb-3 h-4 bg-gray-200 rounded-lg dark:bg-gray-700'></div>
-                    </p>
+                    </div>
 
-                    <p className="mt-6">
+                    <div className="mt-6">
                         <span className="flex items-center font-bold text-primary">Genre: <div className="w-32 h-3 ml-3 bg-gray-200 rounded-lg dark:bg-gray-700"></div></span>
-                    </p>
+                    </div>
 
                     <div className="flex mt-6 items-center py-5 border-b-2 border-t-2 border-gray-200 mb-5">
                         <div className="w-full flex justify-between">
